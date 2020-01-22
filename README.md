@@ -22,3 +22,7 @@ Refer to buildspec-test.yml for commands
 Or refer to https://testgrid-devicefarm.us-west-2.amazonaws.com/
 
 Attach IAM permission to codebuild, allow device farm commands
+
+![Running Selenium Tests on Device Farm](screenshots/device-farm-selenium-chrome.png)
+
+![CICD with Device Farm on CodePipeline](screenshots/cicd-codepipeline-testing.png)
