@@ -2,7 +2,7 @@
 
 https://aws.amazon.com/about-aws/whats-new/2020/01/aws-device-farm-announces-desktop-browser-testing-using-selenium/
 
-Notes for self:
+### Notes for self
 
 ```
 yarn add chai webdriverio --dev
@@ -19,12 +19,13 @@ yarn add @wdio/cli --dev
 node_modules/.bin/wdio run wdio.conf.js
 ```
 
-## Setting of AWS Region
+## Setting of AWS Region to US-WEST-2
 
 https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html
 
 ```
 export AWS_DEFAULT_REGION=us-west-2
+// OR
 export AWS_PROFILE=defaultoregon
 ```
 
@@ -36,8 +37,7 @@ https://docs.aws.amazon.com/devicefarm/latest/testgrid/testing-frameworks-nodejs
 aws devicefarm list-projects
 ```
 
-Refer to buildspec-test.yml for commands
-Or refer to https://testgrid-devicefarm.us-west-2.amazonaws.com/
+Refer to buildspec-test.yml for commands OR refer to https://docs.aws.amazon.com/devicefarm/latest/testgrid/testing-frameworks-nodejs.html
 
 ## AWS CodePipeline and CodeBuild
 
