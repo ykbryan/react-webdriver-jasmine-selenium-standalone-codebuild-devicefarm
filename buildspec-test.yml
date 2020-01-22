@@ -4,6 +4,9 @@ phases:
   install:
     runtime-versions:
       nodejs: 10
+  pre-build:
+    commands:
+      - aws --version
   build:
     commands:
       - echo Build started on `date`
