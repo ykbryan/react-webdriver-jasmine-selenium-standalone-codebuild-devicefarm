@@ -9,6 +9,7 @@ phases:
       - echo Build started on `date`
       - npm install
       - export AWS_REGION=us-west-2
+      - echo $PROJECT_DEVICE_FARM_ARN
       - export FULL_URL=`aws devicefarm create-test-grid-url --expires-in-seconds 3000 --project-arn $PROJECT_DEVICE_FARM_ARN --query "url" --output text`
       - echo $FULL_URL
       - export URL_ARRAY=($(echo $FULL_URL | grep -Eo '(http|https)?[^/"]+'))
