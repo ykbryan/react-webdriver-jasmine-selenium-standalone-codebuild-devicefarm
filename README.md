@@ -11,11 +11,14 @@ yarn add @wdio/cli --dev
 
 node_modules/.bin/wdio run wdio.conf.js
 
-https://docs.aws.amazon.com/devicefarm/latest/testgrid/testing-frameworks-nodejs.html
-export AWS_REGION=us-west-2
+https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html
+export AWS_DEFAULT_REGION=us-west-2
 export AWS_PROFILE=defaultoregon
+
+https://docs.aws.amazon.com/devicefarm/latest/testgrid/testing-frameworks-nodejs.html
 aws devicefarm list-projects
 
 Refer to buildspec-test.yml for commands
+Or refer to https://testgrid-devicefarm.us-west-2.amazonaws.com/
 
 Attach IAM permission to codebuild, allow device farm commands
