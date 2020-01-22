@@ -6,6 +6,7 @@ phases:
       nodejs: 10
   pre_build:
     commands:
+      - pip install --upgrade pip
       - pip3 install --upgrade --user awscli
       - aws --version
   build:
@@ -19,7 +20,7 @@ phases:
       - export URL_ARRAY=($(echo $FULL_URL | grep -Eo '(http|https)?[^/"]+'))
       - echo ${URL_ARRAY[1]}
       - echo ${URL_ARRAY[2]}
-      - export WDIO_HOSTNAME=${URL_ARRAY[2]}
+      - export WDIO_HOSTNAME=${URL_ARRAY[1]}
       - export OFFSET=$(expr ${#WDIO_HOSTNAME} + ${#URL_ARRAY[1]} + 2)
       - echo $OFFSET
       - export WDIO_PATH=${FULL_URL:$OFFSET}
