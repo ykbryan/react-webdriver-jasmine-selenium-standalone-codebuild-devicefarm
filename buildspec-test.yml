@@ -4,7 +4,7 @@ phases:
   install:
     runtime-versions:
       nodejs: 10
-  pre-build:
+  pre_build:
     commands:
       - aws --version
   build:
