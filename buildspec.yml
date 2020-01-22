@@ -4,9 +4,6 @@ phases:
   install:
     runtime-versions:
       nodejs: 10
-  pre_build:
-    commands:
-      - pip3 install --upgrade --user awscli
   build:
     commands:
       - echo Build started on `date`
