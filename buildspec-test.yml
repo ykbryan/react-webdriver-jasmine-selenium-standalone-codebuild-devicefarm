@@ -6,6 +6,7 @@ phases:
       nodejs: 10
   pre_build:
     commands:
+      - pip3 install --upgrade --user awscli
       - aws --version
   build:
     commands:
