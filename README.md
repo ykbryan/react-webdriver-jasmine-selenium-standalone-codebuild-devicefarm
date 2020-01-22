@@ -1,3 +1,5 @@
+https://aws.amazon.com/about-aws/whats-new/2020/01/aws-device-farm-announces-desktop-browser-testing-using-selenium/
+
 yarn add chai webdriverio --dev
 yarn add @wdio/selenium-standalone-service --dev
 yarn add selenium-standalone --dev
@@ -24,5 +26,7 @@ Or refer to https://testgrid-devicefarm.us-west-2.amazonaws.com/
 Attach IAM permission to codebuild, allow device farm commands
 
 ![Running Selenium Tests on Device Farm](screenshots/device-farm-selenium-chrome.png)
+
+![Running Selenium Tests locally with Device Farm](screenshots/local-test-result-console.png)
 
 ![CICD with Device Farm on CodePipeline](screenshots/cicd-codepipeline-testing.png)
