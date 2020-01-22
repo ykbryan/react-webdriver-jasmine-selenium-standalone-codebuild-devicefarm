@@ -22,8 +22,11 @@ node_modules/.bin/wdio run wdio.conf.js
 ## Setting of AWS Region
 
 https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html
+
+```
 export AWS_DEFAULT_REGION=us-west-2
 export AWS_PROFILE=defaultoregon
+```
 
 ## Commands to run AWS Device Farm
 
