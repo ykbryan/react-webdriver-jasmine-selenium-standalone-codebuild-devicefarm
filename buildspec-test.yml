@@ -1,0 +1,23 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 10
+  build:
+    commands:
+      - echo Build started on `date`
+      - npm install
+      - export FULL_URL=`aws devicefarm create-test-grid-url --expires-in-seconds 3000 --project-arn $PROJECT_DEVICE_FARM_ARN --query "url" --output text`
+      - export URL_ARRAY=($(echo $FULL_URL | grep -Eo '(http|https)?[^/"]+'))
+      - export WDIO_HOSTNAME=$URL_ARRAY[2]
+      - export OFFSET=$(expr ${#WDIO_HOSTNAME} + ${#URL_ARRAY[1]} + 2)
+      - export WDIO_PATH=${FULL_URL:$OFFSET}
+      - echo $WDIO_HOSTNAME
+      - echo $WDIO_PATH
+      - node_modules/.bin/wdio run wdio.devicefarm.conf.js
+  post_build:
+    commands:
+      - echo Build completed on `date`
+artifacts:
+  files: '**/*'
