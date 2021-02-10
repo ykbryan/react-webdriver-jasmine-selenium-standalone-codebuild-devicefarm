@@ -16,10 +16,13 @@ phases:
       - export AWS_DEFAULT_REGION=us-west-2
       - export FULL_URL=`aws devicefarm create-test-grid-url --expires-in-seconds 3000 --project-arn $PROJECT_DEVICE_FARM_ARN --query "url" --output text`
       - echo $FULL_URL
-      - export URL_ARRAY=`echo $FULL_URL | grep -Eo '(http|https)?[^/"]+'`
+      - export URL_ARRAY=($(echo $FULL_URL | grep -Eo '(http|https)?[^/"]+'))
       - echo $URL_ARRAY
+      - echo ${URL_ARRAY[0]}
+      - echo ${URL_ARRAY[1]}
+      - echo ${URL_ARRAY[2]}
       - export WDIO_HOSTNAME=${URL_ARRAY[1]}
-      - export OFFSET=$(expr ${#WDIO_HOSTNAME} + 8)
+      - export OFFSET=$(expr ${#WDIO_HOSTNAME} + ${#URL_ARRAY[0]} + 2)
       - export WDIO_PATH=${FULL_URL:$OFFSET}
       - echo $WDIO_HOSTNAME
       - echo $WDIO_PATH
