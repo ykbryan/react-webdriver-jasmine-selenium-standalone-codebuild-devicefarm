@@ -19,7 +19,7 @@ phases:
       - export URL_ARRAY=`echo $FULL_URL | grep -Eo '(http|https)?[^/"]+'`
       - echo $URL_ARRAY
       - export WDIO_HOSTNAME=${URL_ARRAY[1]}
-      - export OFFSET=$(expr ${#WDIO_HOSTNAME} + ${#URL_ARRAY[2]} + 2)
+      - export OFFSET=$(expr ${#WDIO_HOSTNAME} + 8)
       - export WDIO_PATH=${FULL_URL:$OFFSET}
       - echo $WDIO_HOSTNAME
       - echo $WDIO_PATH
