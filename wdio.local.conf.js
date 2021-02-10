@@ -113,7 +113,7 @@ exports.config = {
     version: '3.141.5', // Selenium standalone server version
     drivers: {
       chrome: {
-        version: '79.0.3945.16' // Chromedriver version, your chrome version
+        version: '88' // Chromedriver version, your chrome version
       }
     }
   },
@@ -122,7 +122,7 @@ exports.config = {
     baseURL: 'https://selenium-release.storage.googleapis.com',
     drivers: {
       chrome: {
-        version: '79.0.3945.16',
+        version: '88',
         arch: process.arch,
         baseURL: 'https://chromedriver.storage.googleapis.com'
       }

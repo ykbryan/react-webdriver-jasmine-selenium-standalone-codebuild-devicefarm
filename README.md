@@ -16,6 +16,8 @@ npm install -g wdio
 
 yarn add @wdio/cli --dev
 
+node_modules/.bin/wdio config
+
 node_modules/.bin/wdio run wdio.conf.js
 ```
 
